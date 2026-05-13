@@ -8,6 +8,7 @@ import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import userAuthRoutes from "./routes/userAuthRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 import Admin from "./models/Admin.js";
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.get("/api/health", (req, res) => res.json({ ok: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userAuthRoutes);
 app.use("/api/blogs", blogRoutes);
+app.use("/api/contact", contactRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });

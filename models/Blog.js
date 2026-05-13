@@ -8,6 +8,10 @@ const blogSchema = new mongoose.Schema(
     content_en: { type: String, required: true },
     content_ar: { type: String, required: true },
     image: { type: String, default: "" },
+    metaDescription_en: { type: String, default: "" },
+    metaDescription_ar: { type: String, default: "" },
+    metaKeywords_en: { type: String, default: "" },
+    metaKeywords_ar: { type: String, default: "" },
     slug: { type: String, unique: true, index: true },
   },
   { timestamps: true }
